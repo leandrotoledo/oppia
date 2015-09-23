@@ -461,6 +461,7 @@ HTML5LIB_ZIP_URL = (
 HTML5LIB_ZIP_ROOT_NAME = HTML5LIB_ROOT_NAME
 HTML5LIB_TARGET_ROOT_NAME = HTML5LIB_ROOT_NAME
 
+
 download_and_unzip_files(
     BLEACH_ZIP_URL, THIRD_PARTY_DIR,
     BLEACH_ZIP_ROOT_NAME, BLEACH_TARGET_ROOT_NAME)
@@ -468,6 +469,53 @@ download_and_unzip_files(
     HTML5LIB_ZIP_URL, THIRD_PARTY_DIR,
     HTML5LIB_ZIP_ROOT_NAME, HTML5LIB_TARGET_ROOT_NAME)
 
+
+# Download pylint (Python) library zip and its dependencies.
+
+ASTROID_REV = '1.3.8'
+ASTROID_ROOT_NAME = 'astroid-%s' % ASTROID_REV
+ASTROID_ZIP_URL = (
+    'https://bitbucket.org/logilab/astroid/get/%s.zip' % ASTROID_ROOT_NAME)
+ASTROID_ZIP_ROOT_NAME = 'logilab-astroid-ee51df3a10b6'
+ASTROID_TARGET_ROOT_NAME = ASTROID_ROOT_NAME
+
+SIX_REV = '1.9.0'
+SIX_ROOT_NAME = 'six-%s' % SIX_REV
+SIX_ZIP_URL = (
+    'https://bitbucket.org/gutworth/six/get/%s.zip' % SIX_REV)
+SIX_ZIP_ROOT_NAME = 'gutworth-six-a9b120c9c497'
+SIX_TARGET_ROOT_NAME = SIX_ROOT_NAME
+
+LOGILAB_COMMON_REV = '1.0.2'
+LOGILAB_COMMON_ROOT_NAME = 'logilab-common-%s' % LOGILAB_COMMON_REV
+LOGILAB_COMMON_TAR_URL = (
+    'https://pypi.python.org/packages/source/l/logilab-common/%s.tar.gz' % 
+    LOGILAB_COMMON_ROOT_NAME)
+LOGILAB_COMMON_TAR_ROOT_NAME = LOGILAB_COMMON_ROOT_NAME
+LOGILAB_COMMON_TARGET_ROOT_NAME = LOGILAB_COMMON_ROOT_NAME
+
+PYLINT_REV = '1.4.4'
+PYLINT_ROOT_NAME = 'pylint-%s' % PYLINT_REV
+PYLINT_ZIP_URL = (
+    'https://bitbucket.org/logilab/pylint/get/%s.zip' % PYLINT_ROOT_NAME)
+PYLINT_ZIP_ROOT_NAME = 'logilab-pylint-4e17fe0c44f9'
+PYLINT_TARGET_ROOT_NAME = PYLINT_ROOT_NAME
+
+download_and_unzip_files(
+    ASTROID_ZIP_URL, THIRD_PARTY_DIR,
+    ASTROID_ZIP_ROOT_NAME, ASTROID_TARGET_ROOT_NAME)
+
+download_and_unzip_files(
+    SIX_ZIP_URL, THIRD_PARTY_DIR,
+    SIX_ZIP_ROOT_NAME, SIX_TARGET_ROOT_NAME)
+
+download_and_untar_files(
+    LOGILAB_COMMON_TAR_URL, THIRD_PARTY_DIR,
+    LOGILAB_COMMON_TAR_ROOT_NAME, LOGILAB_COMMON_TARGET_ROOT_NAME)
+
+download_and_unzip_files(
+    PYLINT_ZIP_URL, THIRD_PARTY_DIR,
+    PYLINT_ZIP_ROOT_NAME, PYLINT_TARGET_ROOT_NAME)
 
 # Download all the tar files.
 
